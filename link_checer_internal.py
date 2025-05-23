@@ -356,7 +356,7 @@ st.write("Інструмент для перевірки внутрішніх п
 
 # Введення URL
 urls_input = st.text_area("Введіть URL-адреси (по одному на рядок):", height=100)
-upload_csv = st.file_uploader("Завантажте CSV-файл з URL (з колонкою 'URL')", type=["csv"])
+upload_csv = st.file_uploader("Або завантажте CSV-файл з URL (з колонкою 'URL')", type=["csv"])
 
 # Формат експорту
 export_format = st.radio("Формат експорту:", ["xlsx", "csv"], index=0)
