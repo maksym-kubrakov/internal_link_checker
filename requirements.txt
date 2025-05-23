@@ -1,0 +1,7 @@
+aiohttp
+pandas
+beautifulsoup4
+nltk
+openpyxl
+pyperclip
+streamlit
