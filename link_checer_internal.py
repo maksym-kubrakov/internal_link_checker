@@ -15,14 +15,18 @@ import json
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, PatternFill, Border, Side, Font
 
-# Налаштування NLTK
+# Set NLTK data path
+nltk_data_path = os.path.join(os.path.dirname(__file__), "nltk_data")
+os.makedirs(nltk_data_path, exist_ok=True)
+nltk.data.path.append(nltk_data_path)
+
+# Download NLTK resources if not present
 try:
     nltk.data.find('tokenizers/punkt_tab')
     nltk.data.find('corpora/stopwords')
 except LookupError:
-    nltk.download('punkt_tab', download_dir='/home/runner/nltk_data', quiet=True)
-    nltk.download('stopwords', download_dir='/home/runner/nltk_data', quiet=True)
-    os.environ["NLTK_DATA"] = '/home/runner/nltk_data'
+    nltk.download('punkt_tab', download_dir=nltk_data_path, quiet=True)
+    nltk.download('stopwords', download_dir=nltk_data_path, quiet=True)
 
 class BacklinkCheckerApp:
     def __init__(self):
